@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% if title == "Billeder" %}
+    {% for img in images %}
+        <img src="{{ img }}" alt="{{ img }}">
+    {% endfor %}
+{% endif %}
+
+{% if title == "Lister og Tabeller" %}
+<table>
+    <tr>       
+      <th>Navn</th>
+      <th>Yndlingsfag</th>
+      <th>Uddannelse</th>
+    </tr>
+    {% for d in data %}
+    <tr>   
+        <td>{{ d[0] }}</td>
+        <td>{{ d[1] }}</td>
+        <td>{{ d[2] }}</td>
+    </tr>
+    {% endfor %}
+    </tr>
+</table>
+{% endif %}
+
+{% if title == "Forms og Input" %}
+<p><b>Skriv dit navn, vælg dit yndlingsfag og skriv din uddannelse.</b></p>
+<form action="/forms-og-input" method="post">
+    <label for="name">Navn:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="favclass">Yndlingsfag:</label><br>
+    <select id="favclass" name="favclass">
+        <option value="Systemudvikling 2">Systemudvikling 2</option>
+        <option value="Softwarekonstruktion 2">Softwarekonstruktion 2</option>
+    </select><br><br>
+    <label for="education">Uddannelse:</label><br>
+    <input type="text" id="education" name="education"><br><br>
+    <input type="submit" value="Submit"><br>
+</form>
+{% endif %}
+
+{% if title == "Forms og Input" %}
+<p><b>Indsæt URL-adresse til billede.</b></p>
+<form action="/billeder" method="post">
+    <label for="link">Link til et billede:</label><br>
+    <input type="text" id="link" name="link"><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+
+
+
+{% endblock content %}

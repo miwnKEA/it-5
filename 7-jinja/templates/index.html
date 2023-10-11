@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ region }}</h1>
+<p>Læs om at bruge Jinja med Flask her (<a href="https://realpython.com/primer-on-jinja-templating/#use-jinja-with-flask" target="_blank">link</a>).</p>
+
+<p>Vælg Vestdanmark eller Østdanmark</p>
+
+<form action="/region" method="POST">
+    <input type="submit" id='region' value="DK1 for Vestdanmark">
+</form>
+
+<form action="/region" method="POST">
+    <input type="submit" id='region' value="DK2 for Østdanmark">
+</form>
+
+{% endblock content %}

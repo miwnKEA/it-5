@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+ 
+   {% if session.name %}
+      You are registered with username: {{ session.name }}.<br/><br /><a href="/logout"><button>Logout</button></a>
+   {% else %}
+      You are not registered.<br/><br /><a href="/login"><button>Login</button></a>
+   {% endif %}
+ 
+{% endblock %}

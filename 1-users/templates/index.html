@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Users</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: left;
+        }
+
+        th,
+        td {
+            min-width: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>User</h1>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        {% for u in users %}
+        <tr>
+            <td>{{ u[0] }}</td>
+            <td>{{ u[1] }}</td>
+            <td>{{ u[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <h1>Create User</h1>
+    <form action="/create_user" method="post">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        <br />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br />
+        <br />
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        <br />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br />
+        <br />
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
