@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "08cadb94-42d2-4d9b-a4c9-d9c8739d0daa",
+		"name": "kea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28835286"
+	},
+	"item": [
+		{
+			"name": "1-users",
+			"item": [
+				{
+					"name": "/create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hej@hej.dk",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/create_user"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "miwn@kea.dk",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"miwn@kea.dk\",\n    \"password\": \"abcd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2-image-cdn",
+			"item": [
+				{
+					"name": "/images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/images"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3-cookies",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/"
+					},
+					"response": []
+				},
+				{
+					"name": "/set_cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/set_cookie"
+					},
+					"response": []
+				},
+				{
+					"name": "get_cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/get_cookie"
+					},
+					"response": []
+				},
+				{
+					"name": "delete_cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/delete_cookie"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4-session-cookies",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/"
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/login"
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mikkel",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/login"
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5-response-time",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/"
+					},
+					"response": []
+				},
+				{
+					"name": "/delayed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/delayed"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
